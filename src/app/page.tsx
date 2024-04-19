@@ -3,6 +3,8 @@ import { index } from "drizzle-orm/mysql-core";
 import Link from "next/link";
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const images = [
   "https://utfs.io/f/1ed71567-623f-46e2-8a69-2b9e7672cd0d-jlo1ag.jpeg",
   "https://utfs.io/f/3507ff43-2537-456f-9abd-ca9851609593-heaxjd.jpg",
