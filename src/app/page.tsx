@@ -1,6 +1,7 @@
 import { index } from "drizzle-orm/mysql-core";
 // import Image from "next/image";
 import Link from "next/link";
+import { db } from "~/server/db";
 
 const images = [
   "https://utfs.io/f/1ed71567-623f-46e2-8a69-2b9e7672cd0d-jlo1ag.jpeg",
@@ -14,10 +15,17 @@ const dummyImages = images.map((url, index) => ({
   url,
 }))
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany()
+  console.log(posts)
   return (
     <main>
       <div className="flex flex-wrap gap-4">
+        {posts.map((post, id) => (
+          <div key={id}>
+            <h1>{post.name}</h1>
+          </div>
+        ))}
         {dummyImages.map((image) => (
           <div key={image.id} className="w-48">
             <img src={image.url} alt={image.url}/>
