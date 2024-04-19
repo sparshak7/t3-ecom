@@ -3,7 +3,7 @@
 ## Zephyr Ecommerce
 
 - [ ] Full Stack Framework (NextJS 14)
-- [ ] Deploy (Vercel)
+- [x] Deploy (Vercel)
 - [ ] Database (Vercel PostgreSQL)
 - [ ] Authentication (Clerk)
 - [ ] UI (Shadcn)

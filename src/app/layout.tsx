@@ -1,6 +1,10 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { cn } from "~/lib/utils";
+import { Link, ViewTransitions } from "next-view-transitions";
+import Navbar, { NavLinks } from "~/components/Navbar";
+import { Circle, CircleUser, Search, ShoppingCart, UserX } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,9 +22,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const user = false;
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={cn(
+            "bg-background min-h-screen font-sans antialiased",
+            inter.variable,
+          )}
+        >
+          <Navbar>
+            <div>
+              <Link
+                className="hover:text-primary select-none text-2xl tracking-wide antialiased opacity-90 transition duration-200 ease-out hover:opacity-70 hover:transition-opacity"
+                href="/"
+              >
+                Zephyr
+              </Link>
+            </div>
+            <div className="flex gap-4">
+              <NavLinks href="/search">
+                <Search />
+              </NavLinks>
+              <NavLinks href="/cart/:id">
+                <ShoppingCart />
+              </NavLinks>
+              <NavLinks href="/accounts/:id">
+                {user ? <CircleUser /> : <UserX />}
+              </NavLinks>
+            </div>
+          </Navbar>
+          {children}
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
