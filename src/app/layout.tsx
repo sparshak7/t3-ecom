@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import '@uploadthing/react/styles.css'
 
 import { Inter } from "next/font/google";
 import { cn } from "~/lib/utils";
@@ -8,6 +9,7 @@ import { Search, ShoppingCart } from "lucide-react";
 import { ClerkProvider } from "@clerk/nextjs";
 import AuthNavlink from "~/components/AuthNavlink";
 import { dark } from "@clerk/themes";
+import UploadImage from "~/components/UploadImage";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,6 +50,7 @@ export default function RootLayout({
                   Zephyr
                 </Link>
               </div>
+              <UploadImage />
               <div className="flex gap-4">
                 <NavLinks href="/search">
                   <Search />
