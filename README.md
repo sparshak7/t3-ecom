@@ -2,11 +2,11 @@
 
 ## Zephyr Ecommerce
 
-- [ ] Full Stack Framework (NextJS 14)
+- [x] Full Stack Framework (NextJS 14)
 - [x] Deploy (Vercel)
-- [ ] Database (Vercel PostgreSQL)
+- [x] Database (Vercel PostgreSQL)
 - [ ] Authentication (Clerk)
-- [ ] UI (Shadcn)
+- [x] UI (Shadcn)
 - [ ] Error Management (Sentry)
 - [ ] Rate Limiting (Upstash)
 - [ ] Analytics (Posthog)
