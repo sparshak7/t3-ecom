@@ -53,7 +53,7 @@ export default function RootLayout({
               </NavLinks>
             </div>
           </Navbar>
-          {children}
+          <div className="max-w-5xl mx-auto">{children}</div>
         </body>
       </html>
     </ViewTransitions>
