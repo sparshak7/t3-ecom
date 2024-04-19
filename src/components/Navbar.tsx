@@ -32,7 +32,7 @@ export const NavLinks = (
     <Link
       {...props}
       className={cn(
-        "hover:bg-secondary hover:text-secondary-foreground focus-visible:bg-secondary focus-visible:text-secondary-foreground select-none p-4 hover:rounded-3xl",
+        "hover:bg-secondary hover:text-secondary-foreground focus-visible:bg-secondary focus-visible:text-secondary-foreground select-none p-3 hover:rounded-3xl",
         pathname === props.href && "bg-accent text-primary rounded-3xl",
       )}
     />
